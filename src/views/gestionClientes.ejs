@@ -1,0 +1,111 @@
+<%- include('partials/head'); -%>
+<body>
+    <%- include('partials/header'); -%>
+
+    <table class="tabla-carga">
+        <form action="/gestion/agregar" method="post">
+            <h1>Gestión de clientes</h1>
+            <tr>
+                <td><label for="nombreCliente">Nombre</label></td>
+                <td><input type="text" name="nombreCliente"  required></td>
+            </tr>
+            <tr>
+                <td><label for="cuit">Cuit</label></td>
+                <td><input type="number" name="cuit" required></td>
+            </tr>
+            <tr>
+                <td><label for="provincia">Provincia</label></td>
+                <td><input type="text" name="provincia"  required></td>
+            </tr>
+            <tr>
+                <td><label for="localidad">Localidad</label></td>
+                <td><input type="text" name="localidad"  required></td>
+            </tr>
+            <tr>
+                <td><label for="domicilio">Domicilio</label></td>
+                <td><input type="text" name="domicilio"></td>
+            </tr>
+            <tr>
+                <td><label for="telefono">Teléfono</label></td>
+                <td><input type="text" name="telefono"></td>
+            </tr>
+            <tr>
+                <td><label for="codigoPostal">Código postal</label></td>
+                <td><input type="text" name="codigoPostal"></td>
+            </tr>
+            <tr>
+                <td><label for="transporte">Transporte</label></td>
+                <td><input type="text" name="transporte" required></td>
+            </tr>
+            <tr>
+                <td><label for="seguro">Valor declarado</label></td>
+                <td><input type="text" name="seguro" required></td>
+            </tr>
+            <tr>
+                <td><label for="condicionDeEntrega">Condición de entrega</label></td>
+                <td><input type="text" name="condicionDeEntrega" required></td>
+            </tr>
+            <tr>
+                <td><label for="condicionDePago">Condición de pago</label></td>
+                <td><input type="text" name="condicionDePago" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Guardar cliente">
+                </td>
+            </tr>
+        </form>
+    </table><br><br>
+    <table id="tabla-clientes">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cuit</th>
+                <th>Provincia</th>
+                <th>Localidad</th>
+                <th>Domicilio</th>
+                <th>Teléfono</th>
+                <th>Código Postal</th>
+                <th>Transporte</th>
+                <th>Valor Declarado</th>
+                <th>Condición de Entrega</th>
+                <th>Condición de Pago</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% clientes.forEach(cliente => { %>
+                <tr>
+                    
+                    <td><%= cliente.nombreCliente %></td>
+                    <td><%= cliente.cuit %></td>
+                    <td><%= cliente.provincia %></td>
+                    <td><%= cliente.localidad %></td>
+                    <td><%= cliente.domicilio %></td>
+                    <td><%= cliente.telefono %></td>
+                    <td><%= cliente.codigoPostal %></td>
+                    <td><%= cliente.transporte %></td>
+                    <td><%= cliente.seguro %></td>
+                    <td><%= cliente.condicionDeEntrega %></td>
+                    <td><%= cliente.condicionDePago %></td>
+                    <td>
+                        <form action="/modificarCliente/<%= cliente.id %>" method="GET" style="padding-bottom: 5px;">
+                            <button type="submit">Modificar</button>
+                        </form>
+                        
+                        <form action="/eliminarCliente/<%= cliente.id %>" method="POST" style="display:inline;" onsubmit="return confirmDelete('<%= cliente.nombreCliente %>');">
+                            <button type="submit" style="background-color: red; color: white;">Eliminar</button>
+                        </form>
+                       
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    
+
+    </form>
+    <script src="/js/delete.js"></script>
+
+</body>
+</html>

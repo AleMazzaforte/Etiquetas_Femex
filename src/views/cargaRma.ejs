@@ -1,0 +1,72 @@
+<%- include('partials/head'); -%>
+<body>
+  <%- include('partials/header'); -%>
+    
+    <h1>Buscar Cliente</h1>
+
+    <!-- Formulario para buscar cliente -->
+    <form action="/gestion/buscarCliente" method="GET">
+        <label for="buscarCliente">Buscar Cliente:</label>
+        <input type="text" id="buscarCliente" name="buscarCliente" placeholder="Ingrese nombre del cliente" required>
+        <button type="submit">Buscar</button>
+    </form><br><br>
+
+    <% if (cliente) { %>
+        <h1>Cargar RMA para <%= cliente.nombreCliente %></h1>
+
+        <!-- Formulario de Carga de Productos -->
+        <form action="/gestion/cargarProducto" method="POST">
+            <!-- Campo oculto para el ID del cliente -->
+            <input type="hidden" id="clienteId" name="clienteId" value="<%= cliente.id %>">
+
+            <table class="tabla-carga">
+                <tr>
+                    <td><label for="modelo">Modelo:</label></td>
+                    <td><input type="text" id="modelo" name="modelo" required></td>
+                </tr>
+                <tr>
+                    <td><label for="cantidad">Cantidad:</label></td>
+                    <td><input type="number" id="cantidad" name="cantidad" required></td>
+                </tr>
+                <tr>
+                    <td><label for="solicita">Solicita:</label></td>
+                    <td><input type="date" id="solicita" name="solicita"></td>
+                </tr>
+                <tr>
+                    <td><label for="opLote">OP Lote:</label></td>
+                    <td><input type="text" id="opLote" name="opLote"></td>
+                </tr>
+                <tr>
+                    <td><label for="vencimiento">Vencimiento:</label></td>
+                    <td><input type="date" id="vencimiento" name="vencimiento"></td>
+                </tr>
+                <tr>
+                    <td><label for="seEntrega">Se Entrega:</label></td>
+                    <td><input type="date" id="seEntrega" name="seEntrega"></td>
+                </tr>
+                <tr>
+                    <td><label for="seRecibe">Se Recibe:</label></td>
+                    <td><input type="date" id="seRecibe" name="seRecibe"></td>
+                </tr>
+                <tr>
+                    <td><label for="observacion">Observación:</label></td>
+                    <td><input type="text" id="observacion" name="observacion"></td>
+                </tr>
+                <tr>
+                    <td><label for="numeroDeIngreso">Número de Ingreso:</label></td>
+                    <td><input type="text" id="numeroDeIngreso" name="numeroDeIngreso"></td>
+                </tr>
+                <tr>
+                    <td><label for="numDeEgreso">Número de Egreso:</label></td>
+                    <td><input type="text" id="numDeEgreso" name="numDeEgreso"></td>
+                </tr>
+            </table>
+            
+            <button type="submit">Cargar Producto</button>
+    </form>
+    <% } else { %>
+        <h2>No se ha seleccionado ningún cliente</h2>
+    <% } %>
+    
+</body>
+</html>

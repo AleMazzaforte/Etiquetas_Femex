@@ -1,0 +1,35 @@
+.tabla-carga {
+    width: auto;
+    table-layout: auto;
+    margin: auto; /* Centra la tabla */
+    border-collapse: collapse;
+}
+.tabla-carga td{
+    padding: 5px;
+    white-space: nowrap; /* Evita que se envuelva el texto */
+}
+.tabla-carga input[type="text"], .tabla-carga input[type="number"] {
+    width: 100%; /* El input ocupará todo el espacio disponible en su celda */
+    box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho total */
+}
+
+.tabla-clientes {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-clientes th, .tabla-clientes td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabla-clientes thead {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+}
+
+.tabla-clientes tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

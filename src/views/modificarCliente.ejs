@@ -1,0 +1,58 @@
+<%- include('partials/head'); -%>
+<body>
+    <%- include('partials/header'); -%>
+<h1>Modificar Cliente</h1>
+<form action="/gestion/modificar/<%= cliente.id %>" method="POST">
+    <table class="tabla-carga">
+        <tr>
+            <td><label for="nombreCliente">Nombre:</label></td>
+            <td><input type="text" name="nombreCliente" value="<%= cliente.nombreCliente %>" required></td>
+        </tr>
+        <tr>
+            <td><label for="cuit">Cuit:</label></td>
+            <td><input type="number" name="cuit" value="<%= cliente.cuit %>" required></td>
+        </tr>
+        <tr>
+            <td><label for="provincia">Provincia:</label></td>
+            <td><input type="text" name="provincia" value="<%= cliente.provincia %>" required></td>
+        </tr>
+        <tr>
+            <td><label for="localidad">Localidad:</label></td>
+            <td><input type="text" name="localidad" value="<%= cliente.localidad %>" required></td>
+        </tr>
+        <tr>
+            <td><label for="domicilio">Domicilio:</label></td>
+            <td><input type="text" name="domicilio" value="<%= cliente.domicilio %>"></td>
+        </tr>
+        <tr>
+            <td><label for="telefono">Teléfono:</label></td>
+            <td><input type="text" name="telefono" value="<%= cliente.telefono %>"></td>
+        </tr>
+        <tr>
+            <td><label for="codigoPostal">Código Postal:</label></td>
+            <td><input type="text" name="codigoPostal" value="<%= cliente.codigoPostal %>"></td>
+        </tr>
+        <tr>
+            <td><label for="transporte">Transporte:</label></td>
+            <td><input type="text" name="transporte" value="<%= cliente.transporte %>" required></td>
+        </tr>
+        <tr>
+            <td><label for="seguro">Valor declarado:</label></td>
+            <td><input type="text" name="seguro" value="<%= cliente.seguro %>" required></td>
+        </tr>
+        <tr>
+            <td><label for="condicionDeEntrega">Condición de Entrega:</label></td>
+            <td><input type="text" name="condicionDeEntrega" value="<%= cliente.condicionDeEntrega %>" required></td>
+        </tr>
+        <tr>
+            <td><label for="condicionDePago">Condición de Pago:</label></td>
+            <td><input type="text" name="condicionDePago" value="<%= cliente.condicionDePago %>" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button type="submit">Guardar Cambios</button></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

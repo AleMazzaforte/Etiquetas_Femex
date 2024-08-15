@@ -1,0 +1,68 @@
+<%- include('partials/head'); -%>
+<body>
+    <%- include('partials/header'); -%>
+
+<form action="/productos/agregar" method="POST">
+    <h1>Cargar Producto</h1>
+    <table>
+        <tr>
+            <td><label for="cliente">Cliente:</label></td>
+            <td>
+                <select name="clientesFemex_id" required>
+                    <option value="">Seleccione un cliente</option>
+                    <% clientes.forEach(cliente => { %>
+                        <option value="<%= cliente.id %>"><%= cliente.nombreCliente %></option>
+                    <% }) %>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="modelo">Modelo:</label></td>
+            <td><input type="text" name="modelo" required></td>
+        </tr>
+        <tr>
+            <td><label for="cantidad">Cantidad:</label></td>
+            <td><input type="number" name="cantidad" required></td>
+        </tr>
+        <tr>
+            <td><label for="solicita">Solicita:</label></td>
+            <td><input type="text" name="solicita"></td>
+        </tr>
+        <tr>
+            <td><label for="opLote">OP Lote:</label></td>
+            <td><input type="text" name="opLote"></td>
+        </tr>
+        <tr>
+            <td><label for="vencimiento">Vencimiento:</label></td>
+            <td><input type="date" name="vencimiento"></td>
+        </tr>
+        <tr>
+            <td><label for="seEntrega">Se Entrega:</label></td>
+            <td><input type="text" name="seEntrega"></td>
+        </tr>
+        <tr>
+            <td><label for="seRecibe">Se Recibe:</label></td>
+            <td><input type="text" name="seRecibe"></td>
+        </tr>
+        <tr>
+            <td><label for="observacion">Observación:</label></td>
+            <td><input type="text" name="observacion"></td>
+        </tr>
+        <tr>
+            <td><label for="numeroDeIngreso">Número de Ingreso:</label></td>
+            <td><input type="text" name="numeroDeIngreso"></td>
+        </tr>
+        <tr>
+            <td><label for="numDeEgreso">Número de Egreso:</label></td>
+            <td><input type="text" name="numDeEgreso"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <button type="submit">Guardar Producto</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
