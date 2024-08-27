@@ -1,0 +1,20 @@
+<%- include('partials/head'); -%>
+    <link rel="stylesheet" href="/css/estilosIndex.css">
+    <link rel="stylesheet" href="/css/estilosTablaGestion.css">
+    <link rel="stylesheet" href="/css/autocomplete.css">
+</head>
+<body>
+  <%- include('partials/header'); -%>
+
+  <form id="buscarClienteForm" action="/etiquetas" method="get">
+    <label for="name">Buscar Cliente</label>
+    <input type="text" name="name" id="name">
+    <input type="submit" value="Buscar">
+  </form>
+
+  <!-- Contenedor donde se inyectarán los datos del cliente -->
+  <div id="clienteDataContainer"></div>
+
+  <script src="/js/etiquetas.js"></script>
+</body>
+</html>

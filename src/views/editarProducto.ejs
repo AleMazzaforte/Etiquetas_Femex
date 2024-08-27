@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/autocomplete.css"> <!-- Enlace al CSS compartido -->
+    <link rel="stylesheet" href="/css/estilosIndex.css">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Producto</h1>
+        <!-- Formulario para editar producto -->
+        <form action="/gestion/editarProducto/<%= producto.id %>" method="POST">
+            <input type="hidden" name="id" value="<%= producto.id %>">
+
+            <!-- Tabla para organizar los campos -->
+            <table class="form-table">
+                <tr>
+                    <td><label for="modelo">Modelo:</label></td>
+                    <td><input type="text" id="modelo" name="modelo" value="<%= producto.modelo %>" required></td>
+                    <div id="autocomplete-list" class="autocomplete-list"></div>
+                </tr>
+                <tr>
+                    <td><label for="cantidad">Cantidad:</label></td>
+                    <td><input type="number" id="cantidad" name="cantidad" value="<%= producto.cantidad %>" required></td>
+                </tr>
+                <tr>
+                    <td><label for="solicita">Solicita:</label></td>
+                    <td><input type="text" id="solicita" name="solicita" value="<%= producto.solicita %>" required></td>
+                </tr>
+                <tr>
+                    <td><label for="opLote">Opción de Lote:</label></td>
+                    <td><input type="text" id="opLote" name="opLote" value="<%= producto.opLote %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="vencimiento">Vencimiento:</label></td>
+                    <td><input type="date" id="vencimiento" name="vencimiento" value="<%= producto.vencimiento %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="seEntrega">Se Entrega:</label></td>
+                    <td><input type="text" id="seEntrega" name="seEntrega" value="<%= producto.seEntrega %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="seRecibe">Se Recibe:</label></td>
+                    <td><input type="text" id="seRecibe" name="seRecibe" value="<%= producto.seRecibe %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="observacion">Observación:</label></td>
+                    <td><textarea id="observacion" name="observacion"><%= producto.observacion %></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="numeroDeIngreso">Número de Ingreso:</label></td>
+                    <td><input type="text" id="numeroDeIngreso" name="numeroDeIngreso" value="<%= producto.numeroDeIngreso %>"></td>
+                </tr>
+                <tr>
+                    <td><label for="numDeEgreso">Número de Egreso:</label></td>
+                    <td><input type="text" id="numDeEgreso" name="numDeEgreso" value="<%= producto.numDeEgreso %>"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit" class="btn">Guardar Cambios</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="/js/skuListado.js"></script>
+    <script src="/js/autocomplete.js"></script>
+</body>
+</html>

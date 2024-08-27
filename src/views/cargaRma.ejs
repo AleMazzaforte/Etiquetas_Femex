@@ -1,14 +1,37 @@
 <%- include('partials/head'); -%>
+<link rel="stylesheet" href="/css/estilosIndex.css">
+    <link rel="stylesheet" href="/css/estilosTablaGestion.css">
+    <link rel="stylesheet" href="/css/autocomplete.css">
+    <link rel="stylesheet" href="/css/autocompleteNombres.css"> 
+</head>
 <body>
   <%- include('partials/header'); -%>
-    
+    <h1>cargaRma.ejs</h1>
     <h1>Buscar Cliente</h1>
 
     <!-- Formulario para buscar cliente -->
     <form action="/gestion/buscarCliente" method="GET">
-        <label for="buscarCliente">Buscar Cliente:</label>
-        <input type="text" id="buscarCliente" name="buscarCliente" placeholder="Ingrese nombre del cliente" required>
+        <!-- <label for="buscarCliente">Buscar Cliente:</label>
+        <input type="text" id="nombreCliente" name="buscarCliente" autocomplete="off" class="autocompleteNombres" placeholder="Ingrese nombre del cliente" required>
         <button type="submit">Buscar</button>
+        <ul id="suggestionsList" class="suggestions" style="display: block;"></ul> -->
+
+         <table>
+            <tr>
+              <td><label for="buscarCliente"><h2>Cliente</h2></label></td>
+              <td>
+                
+                <input type="text" name="buscarCliente" class="autocompleteNombres" autocomplete="off" >
+                <ul id="suggestionsList" class="suggestions" style="display: none;"></ul>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" id="tdInputSubmit">
+                <button type="submit" >Buscar</button>
+              </td>
+            </tr>
+          </table> 
+          
     </form><br><br>
 
     <% if (cliente) { %>
@@ -22,7 +45,8 @@
             <table class="tabla-carga">
                 <tr>
                     <td><label for="modelo">Modelo:</label></td>
-                    <td><input type="text" id="modelo" name="modelo" required></td>
+                    <td><input type="text" id="modelo" name="modelo" autocomplete="off" required></td>
+                    <div id="autocomplete-list" class="autocomplete-list"></div>
                 </tr>
                 <tr>
                     <td><label for="cantidad">Cantidad:</label></td>
@@ -64,9 +88,12 @@
             
             <button type="submit">Cargar Producto</button>
     </form>
+    <script src="/js/autocomplete.js"></script>
     <% } else { %>
         <h2>No se ha seleccionado ningún cliente</h2>
     <% } %>
-    
+    <script src="/js/skuListado.js"></script>
+   
+    <script src="/js/nombresListado.js"></script>
 </body>
 </html>

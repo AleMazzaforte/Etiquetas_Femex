@@ -1,14 +1,32 @@
 <%- include('partials/head'); -%>
+    <link rel="stylesheet" href="/css/estilosIndex.css">
+    <link rel="stylesheet" href="/css/estilosTablaGestion.css">
+    <link rel="stylesheet" href="/css/autocomplete.css">
+    <link rel="stylesheet" href="/css/autocompleteNombres.css"> 
+</head>
 <body>
   <%- include('partials/header'); -%>
 
   <form id="form" action="/gestion/mostrarRma" method="GET">
-      <label for=""><h2>Cliente</h2></label>
-      <input type="text" name="cliente" value="<%= cliente ? cliente.nombre : '' %>">
-      <input type="submit" value="Buscar">
+    
+       <table>
+        <tr>
+          <td><h2>Cliente</h2></td>
+          <td>
+            <input type="text" name="cliente" class="autocompleteNombres" autocomplete="off" value="<%= cliente ? cliente.nombre : '' %>">
+            <ul id="suggestionsList" class="suggestions" style="display: none;"></ul>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" id="tdInputSubmit">
+            <input type="submit" value="Buscar">
+          </td>
+        </tr>
+      </table>
+      
   </form><br>
 
-  <div id="mostrarBusqueda"></div>
+
 
   <div id="tabla">
     <table>
@@ -25,6 +43,7 @@
           <th>Observación</th>
           <th>Número de Ingreso</th>
           <th>Número de Egreso</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody id="productos-body">
@@ -39,6 +58,7 @@
     const clienteNombre = "<%= cliente ? cliente.nombreCliente : '' %>";
   </script>
   <script src="/js/js.js"></script>
+  <script src="/js/nombresListado.js"></script>
 </body>
 </html>
 

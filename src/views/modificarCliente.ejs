@@ -1,12 +1,18 @@
 <%- include('partials/head'); -%>
+    <link rel="stylesheet" href="/css/estilosIndex.css">
+    <link rel="stylesheet" href="/css/estilosTablaGestion.css">
+    <link rel="stylesheet" href="/css/autocompleteNombres.css">
+</head>
 <body>
     <%- include('partials/header'); -%>
+    <h1>modificarCliente.ejs</h1>
 <h1>Modificar Cliente</h1>
 <form action="/gestion/modificar/<%= cliente.id %>" method="POST">
     <table class="tabla-carga">
         <tr>
             <td><label for="nombreCliente">Nombre:</label></td>
-            <td><input type="text" name="nombreCliente" value="<%= cliente.nombreCliente %>" required></td>
+            <td><input type="text" name="nombreCliente" id="nombreCliente" value="<%= cliente.nombreCliente %>" required></td>
+            
         </tr>
         <tr>
             <td><label for="cuit">Cuit:</label></td>
@@ -53,6 +59,9 @@
         </tr>
     </table>
 </form>
+
+
+
 
 </body>
 </html>

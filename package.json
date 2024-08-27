@@ -17,6 +17,10 @@
     "express-sessions": "^1.0.1",
     "method-override": "^3.0.0",
     "mysql2": "^3.11.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "@types/sequelize": "^4.28.20"
   }
 }

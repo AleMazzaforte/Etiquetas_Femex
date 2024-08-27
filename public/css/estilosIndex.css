@@ -1,12 +1,20 @@
+
+
 #h1 {
     width: 300px;
     height: 200px;
     background-color: aquamarine;
 }
 
+#form {
+  width: 400px;
+  margin: 0 auto;
+  background-color: ;
+}
 table {
     border-collapse: collapse;
-    width: 100%; 
+    width: auto;
+    margin: 0 auto;
   }
   
   th, td {

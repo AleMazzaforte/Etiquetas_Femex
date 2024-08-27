@@ -1,0 +1,35 @@
+/* Estilos básicos para la lista desplegable */
+.suggestions {
+    
+    list-style: none;
+    border: 1px solid #ccc;
+    
+    max-height: 100px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 99;
+    width: 170px; /* Ajusta el ancho según el padding o margen del contenedor */
+    left: 46,5%;
+    margin-top: -0px;
+}
+
+.suggestions li {
+    padding: 8px;
+    cursor: pointer;
+    width: 100px;
+    text-align: left;
+}
+
+.suggestions li:hover {
+    background-color: #e9e9e9;
+}
+
+.suggestions .highlight {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+#tdInputSubmit {
+    text-align: center;
+}

@@ -1,13 +1,19 @@
 <%- include('partials/head'); -%>
+    <link rel="stylesheet" href="/css/estilosIndex.css">
+    <link rel="stylesheet" href="/css/estilosTablaGestion.css">
+    <link rel="stylesheet" href="/css/autocompleteNombres.css">
+</head>
 <body>
     <%- include('partials/header'); -%>
 
     <table class="tabla-carga">
         <form action="/gestion/agregar" method="post">
-            <h1>Gestión de clientes</h1>
+            <h1><strong>gestionClientes.ejs</strong></h1>
+            <h1>Ingresar cliente nuevo</h1>
             <tr>
                 <td><label for="nombreCliente">Nombre</label></td>
-                <td><input type="text" name="nombreCliente"  required></td>
+                <td><input type="text" name="nombreCliente"  id="nombreCliente">
+               </td>
             </tr>
             <tr>
                 <td><label for="cuit">Cuit</label></td>
@@ -106,6 +112,9 @@
 
     </form>
     <script src="/js/delete.js"></script>
+   
+    
+    
 
 </body>
 </html>

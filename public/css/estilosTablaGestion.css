@@ -2,7 +2,9 @@
     width: auto;
     table-layout: auto;
     margin: auto; /* Centra la tabla */
-    border-collapse: collapse;
+   
+    border: 1px solid black;
+    
 }
 .tabla-carga td{
     padding: 5px;

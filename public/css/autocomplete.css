@@ -1,0 +1,23 @@
+/* Estilos básicos para la lista desplegable */
+.autocomplete-list {
+    display: none;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 99;
+    width: calc(100% - 20px); /* Ajusta el ancho según el padding o margen del contenedor */
+    left: 50%;
+}
+.autocomplete-list div {
+    padding: 10px;
+    cursor: pointer;
+}
+.autocomplete-list div:hover {
+    background-color: #e9e9e9;
+}
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
