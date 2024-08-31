@@ -33,5 +33,9 @@ table {
     display: block;
     text-align: right;
   }
-
+.btn-delete {
+  background-color: red;
+  color: white;
+  margin-top: 2px;
+}
   

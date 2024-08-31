@@ -1,0 +1,54 @@
+<%- include('partials/head'); -%>
+    <link rel="stylesheet" href="/css/estilosIndex.css">
+    <link rel="stylesheet" href="/css/cardsRemitentes.css">
+</head>
+<body>
+  <%- include('partials/header'); -%>
+  <h1 id="h1">Cargar Remitente</h1>
+<form action="/cargaRemitente" method="post">
+    <table>
+        <tr>
+            <td><label for="nombreRemitente">Nombre/Razón Social</label></td>
+            <td><input type="text" name="nombreRemitente" required></td>
+        </tr>
+        <tr>
+            <td><label for="cuitRemitente">C.U.I.T.</label></td>
+            <td><input type="number" name="cuitRemitente"></td>
+        </tr>
+        <tr>
+            <td><label for="direccionRemitente">Dirección</label></td>
+            <td><input type="text" name="direccionRemitente"></td>
+        </tr>
+        <tr>
+            <td><label for="telefonoRemitente">Teléfono</label></td>
+            <td><input type="number" name="telefonoRemitente"></td>
+        </tr>
+        <tr>
+            <td><label for="cPostalRemitente">Código Postal</label></td>
+            <td><input type="text" name="cPostalRemitente"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><input type="submit" id="btn-carga" value="Guardar" ></td>
+        </tr>
+    </table>
+
+    <!-- Contenedor de cards -->
+    <div id="contenedor-cards"></div>
+
+<!-- Template de card -->
+<template id="template-card">
+    <div class="card">
+      <h2>Datos de remitente</h2>
+      <p>Nombre: <span id="nombreRemitente-card"></span></p>
+      <p>Cuit: <span id="cuitRemitente-card"></span></p>
+      <p>Dirección: <span id="direccionRemitente-card"></span></p>
+      <p>Teléfono: <span id="telefonoRemitente-card"></span></p>
+      <p>Código Postal: <span id="cPostalRemitente-card"></span></p>
+      
+      <button class="btn-modificar">Modificar</button>
+      <button class="btn-eliminar">Eliminar</button>
+    </div>
+</template>
+<script src="/js/cardsRemitentes.js"></script>
+</body>
+</html>

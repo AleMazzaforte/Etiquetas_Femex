@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const tbody = document.getElementById('productos-body');
 
   if (productosData.length > 0) {
+    console.log(productosData)
     productosData.forEach(producto => {
+      if(producto.numDeEgreso === 0) {
       const tr = document.createElement('tr');
 
       tr.innerHTML = `
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
 
       tbody.appendChild(tr);
+      }
     });
 
     // Aquí se agrega el manejador de eventos para los formularios de eliminación
