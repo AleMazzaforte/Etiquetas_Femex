@@ -6,6 +6,7 @@ const authController = require('../controladores/authController');
 
 
 router.get('/stock', authController.isAuthenticated, controlador.getStock);
+router.get('/stock', authController.isAuthenticated, controlador.getStock);
+router.post('/stock/borrarProductos', authController.isAuthenticated, controlador.deleteProductos);
 
-
-module.exports = router
+module.exports = router;

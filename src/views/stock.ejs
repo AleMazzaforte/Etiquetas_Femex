@@ -7,28 +7,30 @@
 <body>
   <%- include('partials/header'); -%>
   <h1>Stock</h1>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>Modelo</th>
-        <th>Cantidad</th>
-        <th>Seleccionar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% productos.forEach((producto) => { %>
-      <tr>
-        <td><%= producto.modelo %></td>
-        <td><%= producto.cantidad_total %></td>
-        <td>
-          <input type="checkbox" name="producto" value="<%= producto.modelo %>">
-        </td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
-    
+  <form action="/stock/borrarProductos" id="deleteForm" method="post">  
+    <table>
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Cantidad</th>
+          <th>Seleccionar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% productos.forEach((producto) => { %>
+        <tr>
+          <td><%= producto.modelo %></td>
+          <td><%= producto.cantidad_total %></td>
+          <td>
+            <input type="checkbox" name="productos[]" value="<%= producto.modelo %>">
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <button type="submit" name="action" value="borrarSeleccionados">Borrar Seleccionados</button>
+    <button type="submit" name="action" value="borrarTodos">Borrar Todos</button>
+</form>
+<script src="/js/delete.js"></script>
 </body>
 </html>
